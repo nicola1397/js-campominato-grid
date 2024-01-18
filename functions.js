@@ -4,6 +4,7 @@ function cellGen(boxSize) {
   cell.classList.add(boxSize);
   cell.addEventListener("click", function () {
     this.classList.toggle(`clicked`);
+    console.log(this.innerText);
   });
   return cell;
 }
