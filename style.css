@@ -21,11 +21,47 @@
 
 #selectorContainer {
   align-items: center;
-  line-height: 120px;
+  line-height: 100px;
 }
 
 #gameContainer {
   background-color: aquamarine;
-  width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gridContainer {
+  border: 2px solid white;
+  width: calc(100vh - 250px);
+  height: calc(100vh - 250px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: teal;
+}
+
+.box.clicked {
+  background-color: teal;
+  color: white;
+}
+
+.box.easy {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+.box.medium {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+.box.hard {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
 }

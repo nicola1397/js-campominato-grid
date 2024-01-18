@@ -25,17 +25,19 @@
           <h1>Campo Minato</h1>
         </div>
         <div id="selectorContainer">
-          <select>
+          <select id="mode">
             <option value="1">Facile</option>
             <option value="2">Normale</option>
             <option value="3">Difficile</option>
           </select>
-          <button class="btn btn-primary">Start</button>
+          <button class="btn btn-primary" id="start">Start</button>
         </div>
       </div>
     </header>
     <main>
-      <div id="gameContainer"></div>
+      <div id="gameContainer">
+        <div id="gridContainer" class="d-none"></div>
+      </div>
     </main>
   </body>
 </html>
