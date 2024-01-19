@@ -1,3 +1,4 @@
+// GENERAZIONE CELLA
 function cellGen(boxSize) {
   const cell = document.createElement(`div`);
   cell.classList.add(`box`);
@@ -9,24 +10,31 @@ function cellGen(boxSize) {
   return cell;
 }
 
-function easy() {
-  for (let i = 0; i < 100; i++) {
-    const cellElement = cellGen("easy");
+// GENERAZIONE LIVELLO SINGOLA FUNZIONE
+function generation(x, classe) {
+  for (let i = 0; i < x; i++) {
+    const cellElement = cellGen(classe);
     gridContainer.append(cellElement);
     cellElement.innerText = parseInt(i) + 1;
   }
+  bombGen(x);
+  console.log(bomb);
 }
-function medium() {
-  for (let i = 0; i < 81; i++) {
-    const cellElement = cellGen("medium");
-    gridContainer.append(cellElement);
-    cellElement.innerText = parseInt(i) + 1;
+
+// GENERAZIONE BOMBE SENZA RIPETIZIONI
+function bombGen(max) {
+  bomb = [];
+  let counter = 0;
+  while (bomb.length < 16) {
+    let randomBomb = Math.floor(Math.random() * (max - 1) + 1);
+    for (let i = 0; i <= counter + 1; i++) {
+      if (randomBomb == bomb[i]) {
+        randomBomb = Math.floor(Math.random() * (max - 1) + 1);
+        i = 0;
+      }
+    }
+    bomb[counter] = randomBomb;
+    counter++;
   }
-}
-function hard() {
-  for (let i = 0; i < 49; i++) {
-    const cellElement = cellGen("hard");
-    gridContainer.append(cellElement);
-    cellElement.innerText = parseInt(i) + 1;
-  }
+  return bomb;
 }

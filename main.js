@@ -12,16 +12,17 @@
 const gridContainer = document.getElementById("gridContainer");
 const mode = document.getElementById("mode");
 const start = document.getElementById("start");
+let bomb = [];
 
 start.addEventListener("click", function () {
   gridContainer.innerHTML = ``;
   gridContainer.classList.remove(`d-none`);
 
   if (mode.value == 1) {
-    easy();
+    generation(100, `easy`);
   } else if (mode.value == 2) {
-    medium();
+    generation(81, `medium`);
   } else {
-    hard();
+    generation(49, `hard`);
   }
 });
