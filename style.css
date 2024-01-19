@@ -4,11 +4,13 @@
   justify-content: space-between;
   align-items: center;
 }
+#headerContainer * {
+}
 
 #logoContainer {
+  line-height: 100px;
   display: flex;
   align-items: center;
-  line-height: 100px;
 }
 
 #logoContainer img {
@@ -19,9 +21,13 @@
   font-weight: bold;
 }
 
+#score {
+  text-align: center;
+  line-height: 100px;
+}
+
 #selectorContainer {
   align-items: center;
-  line-height: 100px;
 }
 
 #gameContainer {
@@ -49,7 +55,12 @@
 }
 
 .box.clicked {
-  background-color: teal;
+  background-color: chartreuse;
+  color: white;
+}
+
+.box.bomb {
+  background-color: red;
   color: white;
 }
 
